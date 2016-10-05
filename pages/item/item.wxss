@@ -1,0 +1,54 @@
+.video {
+    height: 100%;
+    width: 100%;
+}
+
+.poster {
+    position: flex;
+    height: 600rpx;
+    width: 750rpx;
+}
+
+.info {
+    margin: 20rpx;
+}
+
+.title {
+    font-size: 36rpx;
+    line-height: 48rpx;
+    color: #444;
+}
+
+.info-ext {
+    margin-top: 25rpx;
+    margin-bottom: 15rpx;
+    padding-bottom: 30rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+
+.f_count {
+    width: 120rpx;
+    padding: 15rpx 20rpx 15rpx 40rpx;
+    font-size: 30rpx;
+    color: #a1a2b3;
+    border-radius: 45rpx;
+    border: 1rpx solid #ccc;
+    display: inline-block;
+}
+
+.f_count_img {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.share {
+    display: inline-block;
+    position: absolute;
+    right: 20rpx;
+}
+
+.share_qq, .share_weixin, .share_qzone, .share_weibo {
+    width: 82rpx;
+    height: 80rpx;
+    margin-left: 15rpx;
+}

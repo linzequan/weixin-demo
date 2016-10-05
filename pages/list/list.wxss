@@ -1,0 +1,51 @@
+.item {
+    display: flex;
+    padding: 20rpx 40rpx;
+    border-bottom: 1rpx solid #eee;
+    cursor: pointer;
+    position: relative;
+}
+
+.item .poster {
+    width: 200rpx;
+    height: 135rpx;
+}
+
+.item .meta {
+    flex: 1;
+    margin-right: 20rpx;
+    height: 135rpx;
+}
+
+.item .meta .title,
+.item .meta .sub-title {
+    display: block;
+}
+
+.item .meta .title {
+    font-size: 32rpx;
+    margin-bottom: 15rpx;
+    line-height: 45rpx;
+}
+
+.item .meta .sub-title {
+    font-size: 15rpx;
+    color: #c0c0c0;
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 20rpx;
+}
+
+.item .img {
+    position: relative;
+}
+
+.duration {
+    font-size: 5rpx;
+    position: absolute;
+    color: #fff;
+    bottom: 5rpx;
+    right: 0;
+    background: rgba(0, 0, 0, .7);
+    width: 80rpx;
+}

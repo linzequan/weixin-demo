@@ -1,0 +1,22 @@
+<!-- 电影明细 -->
+<loading hidden="{{!loading}}">
+  加载中...
+</loading>
+<view class="contain">
+    <video src="{{videoInfo.url}}" class="video"></video>
+</view>
+<view class="info">
+    <text class="title">{{videoInfo.title}}</text>
+    <view class="info-ext">
+        <view class="f_count">
+            <image class="f_count_img" src="/images/like.png"></image>
+            {{videoInfo.thumbup_count}}
+        </view>
+        <view class="share">
+            <image class="share_qq" src="/images/yyb_qq.png"></image>
+            <image class="share_weixin" src="/images/yyb_weixin.png"></image>
+            <image class="share_qzone" src="/images/yyb_qzone.png"></image>
+            <image class="share_weibo" src="/images/yyb_weibo.png"></image>
+        </view>
+    </view>
+</view>

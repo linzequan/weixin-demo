@@ -1,0 +1,26 @@
+<!--
+列表组件
+-->
+<import src="movie_item.wxml" />
+
+<template name="movie-list">
+    <scroll-view scroll-y="true" class="page-body" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="{{scrollTop}}">
+        <block wx:for="{{movies}}">
+            <navigator redirect url="../item/item?id={{item.res_id}}" wx:if="{{item.display_type=='1'}}">
+                <view class="item">
+                    <view class="meta">
+                        <text class="title">{{item.res_title}}</text>
+                        <text class="sub-title">{{item.f_count}}人点赞  {{item.publisher_name}}</text>
+                    </view>
+                    <view class="img">
+                        <image class="poster" src="{{item.res_cover_url}}"></image>
+                        <text class="duration">{{item.duration_format}}</text>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+    </scroll-view>
+    <loading hidden="{{!loading}}">
+        加载中...
+    </loading>
+</template>
