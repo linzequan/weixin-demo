@@ -3,7 +3,7 @@
 // const DETAIL_URL = 'http://interface.m.sjzhushou.com/hotresource/info';
 
 const HOME_PAGE_URL = 'https://wxpma.kakaday.com/index.php/welcome/getHomePage';
-const REFRESH_HOME_URL = 'http://home.m.sjzhushou.com/homepage/nextpage';
+const REFRESH_HOME_URL = 'https://wxpma.kakaday.com/index.php/welcome/refreshHomePage';
 const DETAIL_URL = 'https://wxpma.kakaday.com/index.php/welcome/getDetail';
 
 function fetchApi(url, params) {
