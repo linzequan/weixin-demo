@@ -5,14 +5,13 @@ const mthunder = require('../../libraries/mthunder.js');
 
 Page({
     data: {
-        title: '',
+        title: '详情',
         loading: true,
         videoInfo: '',
         showVideo: false
     },
     onLoad(params) {
         this.data.title = params.title || this.data.title;
-        params.id = 567433;
         mthunder.getDetail(params.id)
             .then(d=> {
                 this.setData({
@@ -28,7 +27,7 @@ Page({
             })
     },
     onReady() {
-        wx.setNavigationBarTitle({ title: this.data.title + ' « 电影 « 手机迅雷'});
+        wx.setNavigationBarTitle({ title: this.data.title + ' « 演示'});
     },
     doPlay() {
         this.setData({

@@ -1,15 +1,15 @@
 {
     "pages":[
-        "pages/list/list",
         "pages/startup/startup",
-        "pages/item/item",
+        "pages/list/list",
         "pages/search/search",
+        "pages/item/item",
         "pages/profile/profile"
     ],
     "window":{
         "navigationBarBackgroundColor": "#35495e",
         "navigationBarTextStyle": "white",
-        "navigationBarTitleText": "手机迅雷",
+        "navigationBarTitleText": "演示",
         "backgroundColor": "#fff",
         "backgroundTextStyle": "dark",
         "enablePullDownRefresh": true

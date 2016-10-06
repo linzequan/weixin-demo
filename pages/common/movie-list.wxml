@@ -4,25 +4,42 @@
 <import src="movie_item.wxml" />
 
 <template name="movie-list">
-    <scroll-view scroll-y="true" class="page-body" style="height: 100%;" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
+    <scroll-view scroll-y="{{canRefresh}}" class="page-body" style="height: 100%;" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
         <view wx:if="{{hasRefesh}}" style="display: flex; flex-direction: row; align-items: center; align-self: center; justify-content: center; margin-top: 30rpx;">
             <icon type="waiting" size="20"/><text>刷新中...</text>
         </view>
         <block wx:for="{{movies}}">
-            <navigator url="../item/item?id={{item.res_id}}" wx:if="{{item.display_type=='1'}}">
-                <view class="item">
-                    <view class="meta">
-                        <text class="title">{{item.res_title}}</text>
-                        <text class="sub-title">{{item.f_count}}人点赞  {{item.publisher_name}}</text>
+            <view wx:if="{{item.res_type && item.res_type=='short_video'}}">
+                <navigator url="../item/item?id={{item.res_id}}" wx:if="{{item.res_type!='advertisement'}}">
+                    <view class="item">
+                        <view class="meta">
+                            <text class="title">{{item.res_title}}</text>
+                            <text class="sub-title">{{item.f_count}}人点赞  {{item.publisher_name}}</text>
+                        </view>
+                        <view class="img">
+                            <image class="poster" src="{{item.res_cover_url}}"></image>
+                            <text class="duration">{{item.duration_format}}</text>
+                        </view>
                     </view>
-                    <view class="img">
-                        <image class="poster" src="{{item.res_cover_url}}"></image>
-                        <text class="duration">{{item.duration_format}}</text>
+                </navigator>
+            </view>
+            <view wx:elif="{{item.type && (item.type=='teleplay' || item.type=='movie' || item.type=='tv')}}">
+                <!-- <navigator url="../item/item?from=search"> -->
+                    <view class="item" bindtap="tapItem">
+                        <view class="meta">
+                            <text class="title">{{item.title}}</text>
+                            <!-- <text>评分{{item.douban_score}}</text> -->
+                            <text class="author">{{item.director}}</text>
+                            <text class="sub-title">{{item.year}}年{{item.genres}}</text>
+                        </view>
+                        <!-- <view class="img">
+                            <image class="poster" src="{{item.poster}}"></image>
+                        </view> -->
                     </view>
-                </view>
-            </navigator>
+                <!-- </navigator> -->
+            </view>
         </block>
-        <view class="tips1">
+        <view class="tips1" wx:if="{{canRefresh}}">
             <view wx:if="{{hasMore}}" style="display: flex; flex-direction: row; align-items: center; align-self: center; justify-content: center; margin-top: 20rpx; margin-bottom: 20rpx;">
                 <icon type="waiting" size="20"/><text>加载中...</text>
             </view>

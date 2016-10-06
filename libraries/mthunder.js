@@ -5,6 +5,7 @@
 const HOME_PAGE_URL = 'https://wxpma.kakaday.com/index.php/welcome/getHomePage';
 const REFRESH_HOME_URL = 'https://wxpma.kakaday.com/index.php/welcome/refreshHomePage';
 const DETAIL_URL = 'https://wxpma.kakaday.com/index.php/welcome/getDetail';
+const SEARCH_URL = 'http://m.sjzhushou.com/cgi-bin/finder16'
 
 function fetchApi(url, params) {
     return new Promise((resolve, reject) => {
@@ -31,5 +32,8 @@ module.exports = {
     getDetail(movieid) {
         return fetchApi(DETAIL_URL, { movieid: movieid })
             .then(res => res);
+    },
+    search(key) {
+        return fetchApi(SEARCH_URL, { key: key, type: 'video_search' })
     }
 }

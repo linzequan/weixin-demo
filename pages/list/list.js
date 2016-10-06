@@ -6,7 +6,8 @@ const util = require('../../utils/util.js');
 
 Page({
     data: {
-        title: '精选',
+        title: '首页',
+        canRefresh: false,
         loading: true,
         movies: [],
         isLoading: false,
@@ -20,7 +21,7 @@ Page({
         this.refresh();
     },
     onReady() {
-        wx.setNavigationBarTitle({ title: this.data.title + ' « 电影 « 手机迅雷' })
+        wx.setNavigationBarTitle({ title: this.data.title + ' « 演示' })
     },
     loadMore: function(e) {
         let self = this;
@@ -65,6 +66,7 @@ Page({
                     hasRefesh: false,
                     isLoading: false,
                     hasMore: true,
+                    canRefresh: true,
                     showToast: (e==undefined ? false : true),
                     toastText: '刷新成功'
                 });
@@ -75,6 +77,7 @@ Page({
                     loading: false,
                     hasRefesh: false,
                     isLoading: false,
+                    canRefresh: true,
                     hasMore: true,
                     showToast: true,
                     toastText: '刷新异常'
