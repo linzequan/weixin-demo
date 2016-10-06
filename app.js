@@ -1,30 +1,15 @@
-//app.js
+// app.js
 App({
-  onLaunch: function () {
-    //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-  },
-  getUserInfo:function(cb){
-    var that = this
-    if(this.globalData.userInfo){
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    }else{
-      //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo)
-            }
-          })
-        }
-      })
+    onLaunch: function() {
+        // 应用程序启动时触发一次
+        console.log('App Launch')
+    },
+    onShow: function() {
+        // 当应用程序进入前台显示状态时触发
+        console.log('App Show')
+    },
+    onHide: function() {
+        // 当应用程序进入后台状态时触发
+        console.log('App Hide')
     }
-  },
-  globalData:{
-    userInfo:null
-  }
-})
+});

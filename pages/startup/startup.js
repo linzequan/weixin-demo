@@ -5,7 +5,7 @@ const mthunder = require('../../libraries/mthunder.js');
 
 Page({
     data: {
-        list: [{
+        guideData: [{
             image: '../../images/guide1.png'
         }, {
             image: '../../images/guide2.png'
@@ -14,10 +14,11 @@ Page({
         }],
         loading: true
     },
-    onLoad() {
-        this.setData({ guideData: this.data.list, loading: false });
+    onLoad: function() {
+        this.setData({ loading: false });
     },
-    start() {
+    start: function() {
         wx.redirectTo({ url: '../list/list' });
+        // wx.navigateTo({ url: '../list/list' });
     }
-});
+})

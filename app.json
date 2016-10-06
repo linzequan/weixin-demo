@@ -1,8 +1,10 @@
 {
     "pages":[
         "pages/startup/startup",
+        "pages/list/list",
         "pages/item/item",
-        "pages/list/list"
+        "pages/search/search",
+        "pages/profile/profile"
     ],
     "window":{
         "navigationBarBackgroundColor": "#35495e",
@@ -11,6 +13,28 @@
         "backgroundColor": "#fff",
         "backgroundTextStyle": "dark",
         "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "color": "#ccc",
+        "selectedColor": "#35495e",
+        "borderStyle": "white",
+        "backgroundColor": "#f9f9f9",
+        "list": [{
+            "pagePath": "pages/list/list",
+            "text": "首页",
+            "iconPath": "images/home.png",
+            "selectedIconPath": "images/home-actived.png"
+        }, {
+            "pagePath": "pages/search/search",
+            "text": "搜索",
+            "iconPath": "images/search.png",
+            "selectedIconPath": "images/search-actived.png"
+        }, {
+            "pagePath": "pages/profile/profile",
+            "text": "我的",
+            "iconPath": "images/profile.png",
+            "selectedIconPath": "images/profile-actived.png"
+        }]
     },
     "networkTimeout": {
         "request": 10000,
