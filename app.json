@@ -1,10 +1,10 @@
 {
     "pages":[
-        "pages/profile/profile",
         "pages/startup/startup",
         "pages/list/list",
         "pages/search/search",
-        "pages/item/item"
+        "pages/item/item",
+        "pages/profile/profile"
     ],
     "window":{
         "navigationBarBackgroundColor": "#35495e",
