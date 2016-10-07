@@ -7,7 +7,7 @@ const util = require('../../utils/util.js');
 Page({
     data: {
         title: '首页',
-        canRefresh: false,
+        canRefresh: true,
         loading: true,
         movies: [],
         isLoading: false,
@@ -66,7 +66,6 @@ Page({
                     hasRefesh: false,
                     isLoading: false,
                     hasMore: true,
-                    canRefresh: true,
                     showToast: (e==undefined ? false : true),
                     toastText: '刷新成功'
                 });
@@ -77,7 +76,6 @@ Page({
                     loading: false,
                     hasRefesh: false,
                     isLoading: false,
-                    canRefresh: true,
                     hasMore: true,
                     showToast: true,
                     toastText: '刷新异常'
