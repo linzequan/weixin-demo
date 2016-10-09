@@ -3,7 +3,10 @@
         <view class="headpic headpic_default" style="background-image: url({{userInfo.avatarUrl}}); background-size: 100% 100%; position: relative; -webkit-border-radius: 999rem; margin: 0 auto; width: 4rem; height: 4rem; margin-bottom: 0.66667rem; background-color: rgba(255, 255, 255, 0.1);">
         </view>
         <text class="user_name" bindtap="login">{{userInfo.nickName}}</text>
-        <text wx:if="{{userInfo.city}}">（{{userInfo.city}}, {{userInfo.province}}）</text>
+        <view wx:if="{{userInfo.city}}">
+            <text wx:if="{{userInfo.city}}">（{{userInfo.city}}, {{userInfo.province}}）</text>
+            <icon type="info_circle" size="15" color="white" bindtap="showMap"/>
+        </view>
     </view>
     <block wx:for="{{listItems}}">
         <view class="user-list" bindtap="{{item.action}}">

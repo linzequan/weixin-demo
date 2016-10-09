@@ -29,27 +29,6 @@
     margin-top: 200px;
 }
 
-.user-list {
-    height: 50px;
-    width:100%;
-    background: white;
-    margin-top: 28rpx;
-}
-
-.user-list image {
-    margin-left: 30rpx;
-    width: 48rpx;
-    height: 48rpx;
-    display: inline-block;
-    overflow: hidden;
-}
-
-.user-list text {
-    font-size:30rpx;
-    margin-left: 20rpx;
-    margin-right: 20rpx;
-}
-
 .user-list-arrow{
     position: absolute;
     right: 30rpx;
@@ -57,7 +36,7 @@
 
 .user_top {
     padding: 1.33333rem 0 0.66667rem;
-    height: 6.13333rem;
+    height: 6.33333rem;
     text-align: center;
     width: 100%;
     color: #FFF;
@@ -67,7 +46,7 @@
 }
 
 .user_name {
-    font-size: 30rpx;
+    font-size: 40rpx;
 }
 
 .user-list {

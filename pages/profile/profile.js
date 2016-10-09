@@ -80,4 +80,22 @@ Page({
             toastText: '暂未处理'
         })
     },
+    showMap: function() {
+        wx.getLocation({
+            type: 'gcj02', // 返回可以用于wx.openLocation的经纬度
+            success: function(res) {
+                let latitude = res.latitude,
+                    longitude = res.longitude;
+                wx.openLocation({
+                    latitude: latitude,
+                    longitude: longitude,
+                    scale: 28
+                })
+            }
+        });
+        // this.setData({
+        //     showToast: true,
+        //     toastText: '暂未处理'
+        // })
+    }
 })
