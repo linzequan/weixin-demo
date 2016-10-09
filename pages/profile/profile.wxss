@@ -1,11 +1,7 @@
-.container {
+.contain {
+    background-color: #F7F7F7;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 200rpx 0;
-    box-sizing: border-box;
+    width: 100%;
 }
 
 .page-header-text {
@@ -31,4 +27,74 @@
 
 .usermotto {
     margin-top: 200px;
+}
+
+.user-list {
+    height: 50px;
+    width:100%;
+    background: white;
+    margin-top: 28rpx;
+}
+
+.user-list image {
+    margin-left: 30rpx;
+    width: 48rpx;
+    height: 48rpx;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.user-list text {
+    font-size:30rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
+.user-list-arrow{
+    position: absolute;
+    right: 30rpx;
+}
+
+.user_top {
+    padding: 1.33333rem 0 0.66667rem;
+    height: 6.13333rem;
+    text-align: center;
+    width: 100%;
+    color: #FFF;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #5274E0;
+}
+
+.user_name {
+    font-size: 30rpx;
+}
+
+.user-list {
+    height: 100rpx;
+    width:100%;
+    background: white;
+    margin-top: 28rpx;
+    line-height: 100rpx;
+}
+
+.user-list-arrow{
+    position: absolute;
+    right: 30rpx;
+}
+
+.user-list image {
+    margin-left: 30rpx;
+    width: 48rpx;
+    height: 48rpx;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 28rpx;
+}
+
+.user-list text {
+    font-size: 35rpx;
+    margin-left: 100rpx;
+    margin-right: 20rpx;
 }

@@ -39,7 +39,7 @@
                 <!-- </navigator> -->
             </view>
         </block>
-        <view class="tips1" wx:if="{{movies.length>0}}">
+        <view class="tips1" wx:if="{{movies.length>0 && canRefresh}}">
             <view wx:if="{{hasMore}}" style="display: flex; flex-direction: row; align-items: center; align-self: center; justify-content: center; margin-top: 20rpx; margin-bottom: 20rpx;">
                 <icon type="waiting" size="20"/><text>加载中...</text>
             </view>

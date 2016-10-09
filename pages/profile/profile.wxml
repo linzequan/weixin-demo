@@ -1,7 +1,18 @@
-<view class="container">
-    <view class="user">
-        <image class="user-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
-        <text class="user-nickname">{{userInfo.nickName}}</text>
-        <text class="user-nickname">{{userInfo.city}}, {{userInfo.province}}</text>
+<view class="contain">
+    <view class="user_top" style="background-image: url(/images/bg_user.jpg); background-size: contain;">
+        <view class="headpic headpic_default" style="background-image: url({{userInfo.avatarUrl}}); background-size: 100% 100%; position: relative; -webkit-border-radius: 999rem; margin: 0 auto; width: 4rem; height: 4rem; margin-bottom: 0.66667rem; background-color: rgba(255, 255, 255, 0.1);">
+        </view>
+        <text class="user_name" bindtap="login">{{userInfo.nickName}}</text>
+        <text wx:if="{{userInfo.city}}">（{{userInfo.city}}, {{userInfo.province}}）</text>
     </view>
+    <block wx:for="{{listItems}}">
+        <view class="user-list" bindtap="{{item.action}}">
+            <image src= "{{item.icon}}" mode="aspectFill" />
+            <text>{{item.title}}</text>
+            <image class="user-list-arrow" src="/images/arrow.png" mode="aspectFill"/>
+        </view>
+    </block>
+    <toast hidden="{{!showToast}}" bindchange="hideToast">
+        {{toastText}}
+    </toast>
 </view>

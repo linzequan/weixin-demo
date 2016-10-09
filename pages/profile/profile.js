@@ -7,9 +7,34 @@ Page({
     data: {
         title: '我的',
         loading: true,
-        wechat: '',
-        nickName: '',
-        avatarUrl: ''
+        showToast: false,
+        toastText: '',
+        userInfo: {
+            nickName: '立即登录',
+            avatarUrl: '/images/headpic_default.png'
+        },
+        //下端列表项
+        listItems: [{
+                icon: '/images/me_icon_member.png',
+                title: '会员中心',
+                action: 'tapItem'
+            }, {
+                icon: '/images/me_icon_task.png',
+                title: '我的任务',
+                action: 'tapItem'
+            }, {
+                icon: '/images/me_icon_helpfeedback.png',
+                title: '帮助反馈',
+                action: 'tapItem'
+            }, {
+                icon: '/images/me_icon_setting.png',
+                title: '设置',
+                action: 'tapItem'
+            }
+        ]
+    },
+    onReady() {
+        wx.setNavigationBarTitle({ title: this.data.title + ' « 演示' })
     },
     onLoad(params) {
         wx.login({
@@ -24,7 +49,6 @@ Page({
     },
     onReady() {
         wx.setNavigationBarTitle({ title: this.data.title + ' « 演示' });
-        this.getUserInfo();
     },
     getUserInfo: function() {
         const self = this;
@@ -37,5 +61,23 @@ Page({
             fail() {},
             complete() {}
         });
-    }
+    },
+    login: function() {
+        this.getUserInfo();
+        this.setData({
+            showToast: true,
+            toastText: '登录成功'
+        })
+    },
+    hideToast: function(e) {
+        this.setData({
+            showToast: false
+        })
+    },
+    tapItem: function(e) {
+        this.setData({
+            showToast: true,
+            toastText: '暂未处理'
+        })
+    },
 })

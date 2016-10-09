@@ -15,6 +15,10 @@ Page({
         loading: true
     },
     onLoad: function() {
+        if(wx.getStorageSync('firstStart')) {
+            this.start();
+        }
+        wx.setStorageSync('firstStart', true);
         this.setData({ loading: false });
     },
     start: function() {
