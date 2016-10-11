@@ -19,3 +19,15 @@
         {{toastText}}
     </toast>
 </view>
+<modal class="modal" hidden="{{modalHidden}}" no-cancel bindconfirm="hideModal">
+    <view>
+        <text class="info">经纬度：{{systemInfo.location.latitude}}, {{systemInfo.location.longitude}}</text>
+        <text class="info">网络类型：{{systemInfo.networkType}}</text>
+        <text class="info">手机型号：{{systemInfo.systemInfo.model}}</text>
+        <text class="info">设备像素比：{{systemInfo.systemInfo.pixelRatio}}</text>
+        <text class="info">窗口宽度：{{systemInfo.systemInfo.windowWidth}}</text>
+        <text class="info">窗口高度：{{systemInfo.systemInfo.windowHeight}}</text>
+        <text class="info">微信设置的语言：{{systemInfo.systemInfo.language}}</text>
+        <text class="info">微信版本号：{{systemInfo.systemInfo.version}}</text>
+    </view>
+</modal>

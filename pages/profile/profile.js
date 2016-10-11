@@ -9,6 +9,12 @@ Page({
         loading: true,
         showToast: false,
         toastText: '',
+        modalHidden: true,
+        systemInfo: {
+            location: {},
+            networkType: {},
+            systemInfo: {}
+        },
         userInfo: {
             nickName: '立即登录',
             avatarUrl: '/images/headpic_default.png'
@@ -19,17 +25,17 @@ Page({
                 title: '会员中心',
                 action: 'tapItem'
             }, {
-                icon: '/images/me_icon_task.png',
-                title: '我的任务',
-                action: 'tapItem'
-            }, {
                 icon: '/images/me_icon_helpfeedback.png',
                 title: '帮助反馈',
                 action: 'tapItem'
             }, {
+                icon: '/images/me_icon_task.png',
+                title: '清空缓存',
+                action: 'clearCache'
+            }, {
                 icon: '/images/me_icon_setting.png',
-                title: '设置',
-                action: 'tapItem'
+                title: '系统信息',
+                action: 'gotoSetting'
             }
         ]
     },
@@ -45,10 +51,39 @@ Page({
                     console.error('获取登录态失败' + res.errMsg);
                 }
             }
-        })
-    },
-    onReady() {
-        wx.setNavigationBarTitle({ title: this.data.title + ' « 演示' });
+        });
+        let self = this;
+        // 获取地理位置信息
+        wx.getLocation({
+            type: 'wgs84',
+            success: function(res) {
+                self.data.systemInfo.location = {
+                    latitude: res.latitude,
+                    longitude: res.longitude,
+                    speed: res.speed,
+                    accuracy: res.accuracy
+                };
+            }
+        });
+        // 获取网络类型
+        wx.getNetworkType({
+            success: function(res) {
+                self.data.systemInfo.networkType = res.networkType // 返回网络类型2g，3g，4g，wifi
+            }
+        });
+        // 获取系统信息
+        wx.getSystemInfo({
+            success: function(res) {
+                self.data.systemInfo.systemInfo = {
+                    model: res.model,
+                    pixelRatio: res.pixelRatio,
+                    windowWidth: res.windowWidth,
+                    windowHeight: res.windowHeight,
+                    language: res.language,
+                    version: res.version
+                };
+            }
+        });
     },
     getUserInfo: function() {
         const self = this;
@@ -93,9 +128,22 @@ Page({
                 })
             }
         });
-        // this.setData({
-        //     showToast: true,
-        //     toastText: '暂未处理'
-        // })
+    },
+    gotoSetting: function() {
+        this.setData({
+            modalHidden: false
+        })
+    },
+    hideModal: function() {
+        this.setData({
+            modalHidden: true
+        })
+    },
+    clearCache: function() {
+        wx.clearStorage();
+        this.setData({
+            showToast: true,
+            toastText: '清理成功'
+        })
     }
 })
