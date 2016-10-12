@@ -26,6 +26,11 @@
     font-size: 32rpx;
     margin-bottom: 15rpx;
     line-height: 45rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .item .meta .sub-title {

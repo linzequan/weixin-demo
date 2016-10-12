@@ -9,7 +9,6 @@ App({
         let self = this;
         wx.getSystemInfo({
             success: function(res) {
-                console.log(res);
                 self.globalData.windowHeight = res.windowHeight + 'px';
             }
         });
@@ -23,6 +22,7 @@ App({
         console.log('App Hide');
     },
     onUnlaunch: function() {
+        // 当应用程序被销毁时触发
         console.log('App onUnlaunch');
     }
 });
