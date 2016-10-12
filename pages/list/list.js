@@ -14,9 +14,11 @@ Page({
         hasMore: false,
         hasRefesh: false,
         showToast: false,
-        toastText: ''
+        toastText: '',
+        windowHeight: ''
     },
     onLoad(params) {
+        this.data.windowHeight = app.globalData.windowHeight;
         this.data.title = params.title || this.data.title;
         this.refresh();
     },

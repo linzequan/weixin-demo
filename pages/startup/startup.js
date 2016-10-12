@@ -12,9 +12,11 @@ Page({
         }, {
             image: '../../images/guide3.png'
         }],
-        loading: true
+        loading: true,
+        windowHeight: '0px'
     },
     onLoad: function() {
+        this.data.windowHeight = app.globalData.windowHeight;
         if(wx.getStorageSync('firstStart')) {
             this.start();
         }

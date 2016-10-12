@@ -37,12 +37,14 @@ Page({
                 title: '系统信息',
                 action: 'gotoSetting'
             }
-        ]
+        ],
+        windowHeight: ''
     },
     onReady() {
         wx.setNavigationBarTitle({ title: this.data.title + ' « 演示' })
     },
     onLoad(params) {
+        this.data.windowHeight = app.globalData.windowHeight;
         wx.login({
             success(res) {
                 if(res.code) {

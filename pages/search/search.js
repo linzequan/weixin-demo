@@ -12,10 +12,14 @@ Page({
         toastText: '',
         subtitle: '请输入搜索内容',
         movies: [],
-        loading: false
+        loading: false,
+        windowHeight: ''
     },
     onReady() {
         wx.setNavigationBarTitle({ title: this.data.title + ' « 演示' })
+    },
+    onLoad() {
+        this.data.windowHeight = app.globalData.windowHeight;
     },
     search(e) {
         if(!e.detail.value) return;

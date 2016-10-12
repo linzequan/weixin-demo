@@ -1,4 +1,4 @@
-<view class="contain">
+<view class="contain" style="height: {{windowHeight}}">
     <view class="user_top" style="background-image: url(/images/bg_user.jpg); background-size: contain;">
         <view class="headpic headpic_default" style="background-image: url({{userInfo.avatarUrl}}); background-size: 100% 100%; position: relative; -webkit-border-radius: 999rem; margin: 0 auto; width: 4rem; height: 4rem; margin-bottom: 0.66667rem; background-color: rgba(255, 255, 255, 0.1);">
         </view>

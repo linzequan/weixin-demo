@@ -1,4 +1,5 @@
-<swiper autoplay="true" interval="3000" duration="1000" style="height: 100%;">
+<swiper autoplay="true" interval="3000" duration="1000" style="height: {{windowHeight}}">
+<!-- <swiper autoplay="true" interval="3000" duration="1000" style="height: 1240rpx;"> -->
     <block wx:for="{{guideData}}" wx:for-index="index">
         <swiper-item>
             <image src="{{item.image}}" class="slide-image" mode="aspectFill"/>
