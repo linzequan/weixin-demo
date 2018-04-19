@@ -1,7 +1,5 @@
 #!/bin/bash
 #
-# @author linzequan <linzequan958@pingan.com.cn>
-#
 # $1: name of component
 
 if [[ $1 == '' ]]; then
